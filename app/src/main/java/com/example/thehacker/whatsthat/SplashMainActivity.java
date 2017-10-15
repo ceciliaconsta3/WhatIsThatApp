@@ -43,6 +43,18 @@ public class SplashMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                startAnimation();
+                Intent intent = new Intent(SplashMainActivity.this, TakePictureActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+    }
+
+    private void startAnimation() {
+
+
         button.setScaleX(0);
         button.setScaleY(0);
         button.animate().scaleX(1.5f).scaleY(1.5f);

@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,8 +41,13 @@ import clarifai2.dto.prediction.Concept;
 
 public class TakePictureActivity extends AppCompatActivity {
 
+
+    private ImageButton cameraButton;
+    private ImageButton resultsButton;
+
     private Button cameraButton;
     private Button resultsButton;
+
     private ImageView picturePreview;
     private int myRequestCode = 1;
     private String API_KEY = ""; // ADD API KEY!!!
@@ -55,8 +61,9 @@ public class TakePictureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_picture);
 
-        cameraButton = (Button)findViewById(R.id.takePictureButton);
-        resultsButton = (Button)findViewById(R.id.resultsButton);
+        cameraButton = (ImageButton)findViewById(R.id.takePictureButton);
+        resultsButton = (ImageButton)findViewById(R.id.resultsButton);
+
         picturePreview = (ImageView)findViewById(R.id.picturePreview);
         testText = (TextView)findViewById(R.id.testText);
 
@@ -170,7 +177,7 @@ public class TakePictureActivity extends AppCompatActivity {
             picturePreview.setImageBitmap(imageBitmap);
         }
 
-        cameraButton.setText("Retake Picture");
+
 
     }
 }
